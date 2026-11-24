@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MONSTER HUB</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#080411;color:white;
+ font-family:Arial,sans-serif;
+ padding:20px;
+}
+header,.panel{
+ background:#140923;border:1px solid #7020bb;
+ border-radius:18px;padding:22px;
+ box-shadow:0 0 18px #6715a544;
+ margin-bottom:20px;
+}
+header{text-align:center}
+h1{font-size:32px;color:#bc59ff;margin:5px}
+h2{color:#c47aff}
+p{color:#b9a5ca}
+input{
+ width:100%;padding:15px;margin:10px 0;
+ border-radius:10px;border:1px solid #8730d4;
+ background:#090511;color:white;font-size:16px;
+}
+button{
+ background:linear-gradient(100deg,#7415d4,#bd36ff);
+ color:white;border:0;border-radius:11px;
+ padding:14px;font-weight:bold;font-size:15px;
+ cursor:pointer;width:100%;margin:7px 0;
+}
+.item{
+ background:#211033;border:1px solid #60219a;
+ padding:17px;border-radius:12px;margin:12px 0;
+ display:flex;justify-content:space-between;
+ align-items:center;gap:10px;
+}
+.status{color:#a855ff;font-weight:bold}
+.hidden{display:none}
+footer{text-align:center;color:#8056a3;padding:20px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>♛ MONSTER HUB</h1>
+<p>PREMIUM TRADE SYSTEM</p>
+</header>
+
+<div class="panel" id="login">
+<h2>♛ Access Portal</h2>
+<p>Enter your VIP access key</p>
+<input id="key" placeholder="Enter your MONSTER KEY">
+<button onclick="login()">UNLOCK ACCESS</button>
+<p id="message"></p>
+</div>
+
+<div class="panel hidden" id="dashboard">
+<h2>MONSTER HUB - Trade Menu</h2>
+
+<div class="item">
+<strong>❄ Freeze Trade</strong>
+<span class="status">DEMO</span>
+</div>
+<div class="item">
+<strong>⚙ Ready Trade</strong>
+<span class="status">DEMO</span>
+</div>
+<div class="item">
+<strong>🤝 Accept Trade</strong>
+<span class="status">DEMO</span>
+</div>
+
+<p>Visual demonstration only. No real Roblox trades are modified.</p>
+<button onclick="logout()">LOG OUT</button>
+</div>
+
+<footer>
+♛ MONSTER HUB © 2026
+</footer>
+
+<script>
+function login(){
+ const key=document.getElementById("key").value.trim();
+ if(!key){
+  document.getElementById("message").textContent="Enter your key first.";
+  return;
+ }
+ document.getElementById("message").textContent=
+ "Key verification requires the secure server setup.";
+}
+function logout(){
+ document.getElementById("dashboard").classList.add("hidden");
+ document.getElementById("login").classList.remove("hidden");
+}
+</script>
+</body>
+</html>
